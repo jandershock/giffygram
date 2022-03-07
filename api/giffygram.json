@@ -1,0 +1,47 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Bob",
+      "email": "Bob@bob.com",
+      "dateJoined": ""
+    },
+    {
+      "name": "Bryan",
+      "email": "bryan@bn.com",
+      "id": 2
+    },
+    {
+      "name": "John",
+      "email": "john@bn.com",
+      "id": 3
+    }
+  ],
+  "posts": [
+    {
+      "title": "Hello World",
+      "description": "This is a post. It is pretty neat. Don't you think so?",
+      "imageURL": "",
+      "timestamp": "",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "title": "Hello There!",
+      "description": "General Kenobi! You are a bold one!",
+      "imageURL": "",
+      "timestamp": "",
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "title": "Potatoes",
+      "description": "Boil them, mash them, stick 'em in a stew.",
+      "imageURL": "",
+      "timestamp": "",
+      "userId": 3,
+      "id": 3
+    }
+  ],
+  "messages": []
+}
