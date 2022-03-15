@@ -1,22 +1,19 @@
 import * as DataManager from "./data/DataManager.js";
+import { PostList } from "./feed/PostList.js"
 
-/**
- * Main logic module for what should happen on initial page load for Giffygram
- */
 
-/*
-    This function performs one, specific task.
-
-    1. Can you explain what that task is?
-    2. Are you defining the function here or invoking it?
-*/
-
+const showPostList = () => {
+	//Get a reference to the location on the DOM where the list will display
+	const postElement = document.querySelector(".postList");
+	DataManager.getPosts().then((allPosts) => {
+		postElement.innerHTML = PostList(allPosts);
+	})
+}
 
 const startGiffyGram = () => {
-    const postElement = document.querySelector(".postList");
-	postElement.innerHTML = "Hello Cohort 47"
+    showPostList();
 }
-// Are you defining the function here or invoking it?
+
 startGiffyGram();
 
 DataManager.getPosts().then(data => {
