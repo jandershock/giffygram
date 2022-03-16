@@ -1,5 +1,6 @@
 import * as DataManager from "./data/DataManager.js";
 import { PostList } from "./feed/PostList.js"
+import { NavBar } from "./nav/NavBar.js";
 
 
 const showPostList = () => {
@@ -10,8 +11,15 @@ const showPostList = () => {
 	})
 }
 
+const showNavBar = () => {
+    //Get a reference to the location on the DOM where the nav will display
+    const navElement = document.querySelector("nav");
+	navElement.innerHTML = NavBar();
+}
+
 const startGiffyGram = () => {
     showPostList();
+	showNavBar();
 }
 
 startGiffyGram();
