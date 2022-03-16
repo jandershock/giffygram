@@ -22,7 +22,7 @@
       "title": "Hello World",
       "description": "Hello!",
       "imageURL": "https://i.giphy.com/media/QYkX9IMHthYn0Y3pcG/giphy.webp",
-      "timestamp": "",
+      "timestamp": "01/01/2018",
       "userId": 1,
       "id": 1
     },
@@ -30,7 +30,7 @@
       "title": "Hello There!",
       "description": "General Kenobi! You are a bold one!",
       "imageURL": "https://i.giphy.com/media/xTiIzJSKB4l7xTouE8/giphy.webp",
-      "timestamp": "",
+      "timestamp": "01/01/2019",
       "userId": 2,
       "id": 2
     },
@@ -38,7 +38,7 @@
       "title": "Potatoes",
       "description": "Boil them, mash them, stick 'em in a stew.",
       "imageURL": "https://i.giphy.com/media/105OwsN7a4UQ2Q/giphy.webp",
-      "timestamp": "",
+      "timestamp": "01/01/2020",
       "userId": 3,
       "id": 3
     }
