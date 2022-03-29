@@ -19,11 +19,11 @@
   ],
   "posts": [
     {
-      "title": "Hello World",
-      "description": "Hello!",
-      "imageURL": "https://i.giphy.com/media/QYkX9IMHthYn0Y3pcG/giphy.webp",
-      "timestamp": "01/01/2018",
+      "title": "An Unexpected Snack",
+      "imageURL": "https://media.giphy.com/media/aqIfdcQRsRyZW/giphy.gif",
+      "description": "Hello there!",
       "userId": 1,
+      "timestamp": 1648566297280,
       "id": 1
     },
     {
@@ -43,29 +43,6 @@
       "id": 3
     },
     {
-      "title": "Hey there",
-      "imageURL": "none",
-      "description": "Absolutely nothing",
-      "timestamp": 1647546522422,
-      "id": 4
-    },
-    {
-      "title": "Testing user id",
-      "imageURL": "none",
-      "description": "none",
-      "userId": 1,
-      "timestamp": 1647546652933,
-      "id": 5
-    },
-    {
-      "title": "Hello ",
-      "imageURL": "https://media3.giphy.com/media/zGnnFpOB1OjMQ/giphy.gif?cid=ecf05e47vkjuwzyj94x0yqydsrjnxl5noktvsmurzlb327jt&rid=giphy.gif&ct=g",
-      "description": "",
-      "userId": 1,
-      "timestamp": 1647547153180,
-      "id": 6
-    },
-    {
       "title": "Clapping Hobbits",
       "imageURL": "https://media3.giphy.com/media/zGnnFpOB1OjMQ/giphy.gif?cid=ecf05e47vkjuwzyj94x0yqydsrjnxl5noktvsmurzlb327jt&rid=giphy.gif&ct=g",
       "description": "",
@@ -74,20 +51,12 @@
       "id": 7
     },
     {
-      "title": "More Clapping Hobbits",
-      "imageURL": "https://media3.giphy.com/media/zGnnFpOB1OjMQ/giphy.gif?cid=ecf05e47vkjuwzyj94x0yqydsrjnxl5noktvsmurzlb327jt&rid=giphy.gif&ct=g",
-      "description": "",
+      "title": "Hello World",
+      "description": "Hello!",
+      "imageURL": "https://i.giphy.com/media/QYkX9IMHthYn0Y3pcG/giphy.webp",
+      "timestamp": "01/01/2018",
       "userId": 1,
-      "timestamp": 1647547363313,
       "id": 8
-    },
-    {
-      "title": "asdfasdf ",
-      "imageURL": "asdfasdf",
-      "description": "asdfasdf",
-      "userId": 1,
-      "timestamp": 1647547957709,
-      "id": 9
     }
   ],
   "messages": []

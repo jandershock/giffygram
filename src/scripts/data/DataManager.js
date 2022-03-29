@@ -45,3 +45,37 @@ export const createPost = postObj => {
   })
       .then(response => response.json())
 }
+
+export const deletePost = postId => {
+  return fetch(`http://localhost:8088/posts/${postId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(response => response.json())
+}
+
+export const getSinglePost = postId => {
+  return fetch(`http://localhost:8088/posts/${postId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(response => response.json())
+}
+
+export const updatePost = (postId, postObj) => {
+  return fetch(`http://localhost:8088/posts/${postId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(postObj)
+  })
+    .then(response => {
+      console.log(response);
+      return response.json();
+    })
+}

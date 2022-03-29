@@ -1,20 +1,12 @@
 import * as DataManager from "./data/DataManager.js";
-import { PostList } from "./feed/PostList.js"
+import { PostList, showPostList } from "./feed/PostList.js"
 import { NavBar } from "./nav/NavBar.js";
 import { Footer } from "./nav/Footer.js";
 import { PostEntry } from "./feed/PostEntry.js";
+import { createEditForm } from "./feed/PostEdit.js";
 
 const showPostEntry = () => {
 	document.querySelector(".entry__form").innerHTML = PostEntry();
-}
-
-const showPostList = () => {
-	//Get a reference to the location on the DOM where the list will display
-	const postElement = document.querySelector(".postList");
-	DataManager.getPosts().then((allPosts) => {
-		postElement.innerHTML = PostList(allPosts);
-		document.querySelector("#postCount").innerText = allPosts.length;
-	})
 }
 
 const showNavBar = () => {
@@ -97,8 +89,26 @@ const startGiffyGram = () => {
 			// be sure to import from the DataManager
 			DataManager.createPost(postObject)
 			// Update current list of entries to show recently added entry
-			.then(showPostList());
-			showPostList();
+			.then(showPostList);
+		} else if (event.target.id.startsWith("delete")) {
+			let targetPostId = event.target.id.split("--")[1];
+			console.log (`You want to delete post ${targetPostId}`)
+			DataManager.deletePost(targetPostId)
+				.then(showPostList);
+		} else if (event.target.id.startsWith("edit")) {
+			let targetPostId = event.target.id.split("--")[1];
+			// Retrieve single post as JSON object
+			DataManager.getSinglePost(targetPostId)
+				.then(singlePostJSON => {
+					// Generate the dialog element
+					return createEditForm(singlePostJSON);
+				})
+				.then(() => {
+					// Once loaded, show the edit form
+					let tmp = document.querySelector("#postEditModal");
+					console.log(tmp);
+					tmp.showModal();
+				})
 		}
 	})
 

@@ -1,4 +1,5 @@
 import { Post } from "./Post.js";
+import * as DataManager from "../data/DataManager.js"
 
 export const PostList = (allPosts) => {
 	let postHTML = "";
@@ -9,4 +10,13 @@ export const PostList = (allPosts) => {
 		}
 		return postHTML;
 	
+}
+
+export const showPostList = () => {
+	//Get a reference to the location on the DOM where the list will display
+	const postElement = document.querySelector(".postList");
+	DataManager.getPosts().then((allPosts) => {
+		postElement.innerHTML = PostList(allPosts);
+		document.querySelector("#postCount").innerText = allPosts.length;
+	})
 }
