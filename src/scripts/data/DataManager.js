@@ -16,22 +16,63 @@ export const getUsers = () => {
 }
 
 export const getPosts = () => {
-    return fetch("http://localhost:8088/posts")
-      .then(response => response.json())
-      .then(parsedResponse => {
-        postCollection = parsedResponse
-        return parsedResponse;
-      })
-  }
-
-const loggedInUser = {
-	id: 1,
-	name: "Bryan",
-	email: "bryan@bn.com"
+  const userId = getLoggedInUser().id
+  return fetch(`http://localhost:8088/posts?_expand=user`)
+    .then(response => response.json())
+    .then(parsedResponse => {
+      console.log("data with user", parsedResponse)
+      postCollection = parsedResponse
+      return parsedResponse;
+    })
 }
+
+let loggedInUser = {}
 
 export const getLoggedInUser = () => {
 	return loggedInUser;
+}
+
+export const setLoggedInUser = (user) => {
+  loggedInUser = user;
+}
+
+export const loginUser = (userObj) => {
+  return fetch(`http://localhost:8088/users?name=${userObj.name}&email=${userObj.email}`)
+  .then(response => {
+    let tmp = response.json();
+    console.log(response, tmp);
+    return tmp;
+  })
+  .then(parsedUser => {
+    //is there a user?
+    console.log("parsedUser", parsedUser) //data is returned as an array
+    if (parsedUser.length > 0){
+      setLoggedInUser(parsedUser[0]);
+      return getLoggedInUser();
+    }else {
+      //no user
+      return false;
+    }
+  })
+}
+
+export const registerUser = (userObj) => {
+  return fetch(`http://localhost:8088/users`, {
+    method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userObj)
+  })
+  .then(response => response.json())
+  .then(parsedUser => {
+    setLoggedInUser(parsedUser);
+    return getLoggedInUser();
+  })
+}
+
+export const logoutUser = () => {
+  loggedInUser = {};
 }
 
 export const createPost = postObj => {
