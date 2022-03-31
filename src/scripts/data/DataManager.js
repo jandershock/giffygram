@@ -120,3 +120,19 @@ export const updatePost = (postId, postObj) => {
       return response.json();
     })
 }
+
+export const getUserLikesByPostId = (postId) => {
+  return fetch(`http://localhost:8088/userLikes?postId=${postId}`)
+    .then(data => data.json())
+}
+
+export const createUserLike = (userLikeObj) => {
+  return fetch("http://localhost:8088/userLikes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userLikeObj)
+  })
+    .then(response => response.json())
+}

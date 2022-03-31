@@ -1,15 +1,15 @@
 import { Post } from "./Post.js";
 import * as DataManager from "../data/DataManager.js"
+import { generateLikesDiv } from "./Likes.js";
 
 export const PostList = (allPosts) => {
-	let postHTML = "";
-		//Loop over the array of posts and for each one, invoke the Post component which returns HTML representation
-		for (const postObject of allPosts) {
-			//what is a postObject?
-			postHTML += Post(postObject)
-		}
-		return postHTML;
-	
+	// Build an array of html strings
+	let postPromiseArray = allPosts.map((element) => {
+		// Post function returns html string based on a single post object
+		return Post(element)
+	});
+	return postPromiseArray.join("");
+
 }
 
 export const showPostList = () => {
